@@ -24,7 +24,7 @@ transforms = transforms.Compose([transforms.ToTensor(),
                                  transforms.RandomAffine(degrees=(30, 70),
                                                          translate=(0.1, 0.3),
                                                          scale=(0.5, 0.75)),
-                                 transforms.AugMix()
+                                 transforms.RandomInvert()
                                  ])
 
 
