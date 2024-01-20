@@ -23,8 +23,8 @@ transforms = transforms.Compose([transforms.ToTensor(),
 train_dataset = ImageFolder(train_data_path, transform=transforms)
 val_dataset = ImageFolder(validation_data_path, transform=transforms)
 
-train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True)
-val_loader = DataLoader(val_dataset, batch_size=1, shuffle=False)
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
 model = LeNet5(num_classes=4)
 criterion = nn.CrossEntropyLoss()
