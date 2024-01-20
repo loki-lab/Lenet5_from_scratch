@@ -39,4 +39,4 @@ criterion = nn.CrossEntropyLoss()
 optimizer = Adam(model.parameters(), lr=0.001)
 
 trainer = Trainer(model, criterion, optimizer, device)
-trainer.fit(train_loader, val_loader, 20)
+trainer.fit(train_loader, val_loader, 32)
