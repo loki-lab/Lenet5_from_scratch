@@ -20,7 +20,11 @@ transforms = transforms.Compose([transforms.ToTensor(),
                                  transforms.RandomPerspective(distortion_scale=0.5, p=0.1),
                                  transforms.RandomRotation(degrees=(0, 180)),
                                  transforms.RandomHorizontalFlip(p=0.5),
-                                 transforms.RandomVerticalFlip(p=0.5)])
+                                 transforms.RandomVerticalFlip(p=0.5),
+                                 transforms.RandomAffine(degrees=(30, 70),
+                                                         translate=(0.1, 0.3),
+                                                         scale=(0.5, 0.75))
+                                 ])
 
 
 train_dataset = ImageFolder(train_data_path, transform=transforms)
