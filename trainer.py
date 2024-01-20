@@ -69,4 +69,5 @@ class Trainer:
                         'optimizer_state_dict': self.optimizer.state_dict(),
                         'loss': epoch_loss,
                     }, "checkpoints/best_checkpoint.pth")
+                    print("Save best model to checkpoint")
 
