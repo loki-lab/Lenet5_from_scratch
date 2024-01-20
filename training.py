@@ -15,7 +15,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("device:", device)
 
 transforms = transforms.Compose([transforms.ToTensor(),
-                                 transforms.Resize((224, 224), antialias=True),
+                                 transforms.Resize((512, 512), antialias=True),
                                  transforms.Normalize((0.5,), (0.5,)),
                                  transforms.RandomPerspective(distortion_scale=0.5, p=0.1),
                                  transforms.RandomRotation(degrees=(0, 180)),
