@@ -68,5 +68,5 @@ class Trainer:
                         'model_state_dict': self.model.state_dict(),
                         'optimizer_state_dict': self.optimizer.state_dict(),
                         'loss': epoch_loss,
-                    }, "checkpoint/best_checkpoint.pth")
+                    }, "checkpoints/best_checkpoint.pth")
 
