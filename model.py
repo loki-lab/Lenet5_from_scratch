@@ -1,4 +1,25 @@
 from torch import nn
+from torchvision import models
+
+
+class AlexNetTransfer(nn.Module):
+    def __init__(self, num_classes=10):
+        super().__init__()
+        self.model = models.alexnet(weights="DEFAULT")
+        for param in self.model.parameters():
+            param.requires_grad = False
+        self.model.classifier = nn.Sequential(
+            nn.Dropout(p=0.5, inplace=False),
+            nn.Linear(in_features=9216, out_features=4096, bias=True),
+            nn.ReLU(inplace=True),
+            nn.Dropout(p=0.5, inplace=False),
+            nn.Linear(in_features=4096, out_features=4096, bias=True),
+            nn.ReLU(inplace=True),
+            nn.Linear(in_features=4096, out_features=num_classes, bias=True)
+        )
+
+    def forward(self, x):
+        return self.model(x)
 
 
 # Defining the convolutional neural network

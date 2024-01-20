@@ -1,7 +1,7 @@
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
 from torch import nn
-from model import LeNet5
+from model import AlexNetTransfer
 from torch.utils.data import DataLoader
 from torch.optim import Adam
 from trainer import Trainer
@@ -37,7 +37,7 @@ val_dataset = ImageFolder(validation_data_path, transform=transforms["validation
 train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
-model = LeNet5(num_classes=4)
+model = AlexNetTransfer(num_classes=4)
 criterion = nn.CrossEntropyLoss()
 optimizer = Adam(model.parameters(), lr=0.001)
 
