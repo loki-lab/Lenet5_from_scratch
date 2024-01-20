@@ -52,5 +52,5 @@ class Trainer:
                     val_corrects += predicted.eq(target).sum().item()
 
                 val_loss = val_loss / len(valid_loader.dataset)
-                val_acc = val_corrects / len(valid_loader)
+                val_acc = val_corrects / len(valid_loader.dataset)
                 print('Validation Loss: {:.4f}, Validation Accuracy: {:.4f}'.format(val_loss, val_acc))
