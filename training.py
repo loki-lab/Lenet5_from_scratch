@@ -23,7 +23,8 @@ transforms = transforms.Compose([transforms.ToTensor(),
                                  transforms.RandomVerticalFlip(p=0.5),
                                  transforms.RandomAffine(degrees=(30, 70),
                                                          translate=(0.1, 0.3),
-                                                         scale=(0.5, 0.75))
+                                                         scale=(0.5, 0.75)),
+                                 transforms.AugMix()
                                  ])
 
 
