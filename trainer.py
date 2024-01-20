@@ -45,7 +45,7 @@ class Trainer:
                 'model_state_dict': self.model.state_dict(),
                 'optimizer_state_dict': self.optimizer.state_dict(),
                 'loss': epoch_loss,
-            }, "checkpoint/latest_checkpoint.pth")
+            }, "checkpoints/latest_checkpoint.pth")
 
             with torch.no_grad():
                 self.model.eval()
